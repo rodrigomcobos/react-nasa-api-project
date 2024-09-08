@@ -4,7 +4,7 @@
 const SideBar = (props) => {
 
     //Receiving variables from props
-    const { handleToggleModal } = props;
+    const { handleToggleModal, data } = props;
 
 
     return (
@@ -13,10 +13,13 @@ const SideBar = (props) => {
             {/* adding handleToggleModal to overlay so when clicked outside it will close */}
             <div onClick={handleToggleModal} className="bgOverlay"></div>
             <div className="sidebarContents">
-                <h2>The Brutal Martian Landscape</h2>
-                <div>
-                    <p>Description</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, veniam accusantium odit unde aliquid quae praesentium! Consectetur vel voluptatum impedit. Officia corporis laudantium, eos consequuntur eum consequatur dolorem tenetur quisquam.</p>
+                {/* If data is available then show title */}
+                <h2>{data?.title}</h2>
+                <div className="descriptionContainer">
+                    {/* Changing to date instead */}
+                    <p className="descriptionTitle">{data?.date}</p>
+                    {/* If data is available then show explanation */}
+                    <p>{data?.explanation}</p>
                 </div>
                 <button onClick={handleToggleModal}>
                     <i className="fa-solid fa-arrow-right"> Close</i>

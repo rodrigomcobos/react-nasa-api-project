@@ -164,7 +164,7 @@ footer button:hover {
 .loadingState i {
   opacity: 0.2;
   font-size: 3rem;
-  animation: spin 1s linear infinite;
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
